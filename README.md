@@ -7,11 +7,11 @@
 
 ## Link do projeto
 
-Coming soon.
+https://rick-and-morty-api-juliemoura.vercel.app/
 
 ## Descrição
 
-Coming soon.
+O site usa a API do Rick and Morty para fornecer informações sobre os personagens, incluindo se estão vivos ou mortos, gênero, nome e episódios em que aparecem. É possível pesquisar qualquer personagem e conhecer melhor a série. Uma ferramenta útil para expandir o conhecimento sobre o universo de Rick and Morty.
 
 ## Instalação
 
