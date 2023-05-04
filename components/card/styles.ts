@@ -28,17 +28,17 @@ export const ContentInformation = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 21px;
+  font-size: 18px;
   font-weight: bold;
 `;
 
 export const Status = styled.h3`
-  font-size: 16px;
+  font-size: 15px;
   font-weight: medium;
 `;
 
 export const Gender = styled.h4`
-  font-size: 16px;
+  font-size: 15px;
   font-weight: medium;
 `;
 

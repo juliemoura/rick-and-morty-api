@@ -18,7 +18,7 @@ const Card = ({ data }: IData) => {
         <Container>
             {data.map((item, key) => (
                 <Content key={key} xs={24} sm={24} md={11} lg={7} xl={7}>
-                    <Image src={item.image} width={150} height={150} alt="" />
+                    <Image src={item.image} width={160} height={160} alt="" />
                     <ContentInformation>
                         <Title>{item.name}</Title>
                         <Status>{item.status}</Status>

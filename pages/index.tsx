@@ -1,9 +1,10 @@
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 import { Input } from "@/components/input";
+import { Loading } from "@/components/loading";
 import { Navbar } from "@/components/navbar";
 import { Title } from "@/components/title";
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 interface IValue {
   name: string;
@@ -40,13 +41,6 @@ export default function Home() {
           setIsLoading(false);
         });
     }, 4000);
-
-    // setTimeout(() => {
-    //   fetch('https://rickandmortyapi.com/api/character')
-    //     .then(response => response.json())
-    //     .then(data => setCharacters(data.results))
-    // })
-
   }, []);
 
   return (
@@ -59,48 +53,17 @@ export default function Home() {
           <Button onClick={() => handleSearch()} />
         </div>
       </div>
-
-      {searchResults.length > 0 ? (
-        <Card data={searchResults} />
+      {isLoading ? (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "50px" }}>
+          <Loading />
+        </div>
       ) : (
-        <Card data={characters} />
+        searchResults.length > 0 ? (
+          <Card data={searchResults} />
+        ) : (
+          <Card data={characters} />
+        )
       )}
-      {/* {isLoading ? (
-        <h1>carregando</h1>
-      ) : (
-        searchResults.map((item, key) => (
-          <div key={key}>
-            <h1 style={{ color: "black" }}>{item.id}</h1>
-            <h2 style={{ color: "black" }}>{item.name}</h2>
-            <h3 style={{ color: "black" }}>{item.status}</h3>
-            <h4 style={{ color: "black" }}>{item.species}</h4>
-            <h4 style={{ color: "black" }}>{item.gender}</h4>
-            <img src={item.image} />
-            <h5 style={{ color: "black" }}>{item.episode.length}</h5>
-          </div>
-        ))
-      )} */}
     </>
-    // <>
-    //   <h1 style={{ color: "black" }}>
-    //     Buscar personagem
-    //   </h1>
-    //   <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-    //   <button onClick={() => handleSearch()}>buscar</button>
-    //   {searchResults.length > 0 ? (
-    //     searchResults.map((item, key) => (
-    //       <div key={key}>
-    //         <h1 style={{ color: "black" }}>{item.id}</h1>
-    //         <h2 style={{ color: "black" }}>{item.name}</h2>
-    //         <h3 style={{ color: "black" }}>{item.status}</h3>
-    //         <h4 style={{ color: "black" }}>{item.species}</h4>
-    //         <h4 style={{ color: "black" }}>{item.gender}</h4>
-    //         <img src={item.image} />
-    //         <h5 style={{ color: "black" }}>{item.episode.length}</h5>
-    //       </div>
-    //     ))
-    //   ) : (
-    //     <p style={{ color: "black" }}>Nenhum resultado encontrado</p>
-    //   )}
   )
 }
