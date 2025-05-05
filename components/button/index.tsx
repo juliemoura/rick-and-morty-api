@@ -8,7 +8,7 @@ interface IButton {
 const Button = ({ onClick }: IButton) => {
     return (
         <ButtonContainer onClick={onClick}>
-            <BsSearch size={16} color="#FFF"/>
+            <BsSearch size={16} color="#fafa"/>
         </ButtonContainer>
     )
 };
